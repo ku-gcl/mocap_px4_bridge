@@ -26,8 +26,10 @@ class MocapPX4Bridge : public rclcpp::Node {
         const std::string px4_topic =
             this->get_parameter("px4_topic").as_string();
 
-        RCLCPP_INFO(get_logger(), "mocap_topic: " + mocap_topic);
-        RCLCPP_INFO(get_logger(), "px4_topic:   " + px4_topic);
+        // RCLCPP_INFO(get_logger(), "mocap_topic: " + mocap_topic);
+        // RCLCPP_INFO(get_logger(), "px4_topic:   " + px4_topic);
+        RCLCPP_INFO(get_logger(), "mocap_topic: %s", mocap_topic.c_str());
+        RCLCPP_INFO(get_logger(), "px4_topic:   %s", px4_topic.c_str());
 
         poseSub = this->create_subscription<geometry_msgs::msg::PoseStamped>(
             mocap_topic, 10,
