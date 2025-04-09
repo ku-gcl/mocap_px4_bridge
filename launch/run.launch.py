@@ -8,7 +8,7 @@ import os
 def generate_launch_description():
     # Specify the path to the mocap.launch.py file
     mocap_launch_file = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([get_package_share_directory('mocap_optitrack'), '/launch/mocap.launch.py'])
+        PythonLaunchDescriptionSource([get_package_share_directory('vrpn_mocap'), '/launch/client.launch.py']),
     )
 
     # Get the config path
